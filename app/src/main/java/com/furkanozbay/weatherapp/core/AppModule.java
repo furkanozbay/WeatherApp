@@ -8,5 +8,5 @@ import dagger.android.AndroidInjectionModule;
  */
 
 @Module(includes = AndroidInjectionModule.class)
-public abstract class AppModule {
+public class AppModule {
 }

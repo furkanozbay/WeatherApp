@@ -16,27 +16,34 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
     //RxAndroid
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.1.7'
-
     //Dagger
     compile 'com.google.dagger:dagger-android:2.11'
-    compile 'com.google.dagger:dagger-android-support:2.11' // if you use the support libraries
+    compile 'com.google.dagger:dagger-android-support:2.11'
+    // if you use the support libraries
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.11'
     annotationProcessor "com.google.dagger:dagger-compiler:2.11"
-
     //Butterknife
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    //Gson
+    compile 'com.google.code.gson:gson:2.8.0'
 }

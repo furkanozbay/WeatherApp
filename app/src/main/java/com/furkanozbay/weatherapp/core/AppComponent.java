@@ -10,6 +10,6 @@ import dagger.Component;
 
 @Singleton
 @Component(modules = AppModule.class)
-interface AppComponent {
+public interface AppComponent {
     void inject(WeatherApp weatherApp);
 }

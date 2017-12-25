@@ -2,6 +2,7 @@ package com.furkanozbay.weatherapp.core;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 
 import javax.inject.Inject;
 
@@ -15,6 +16,8 @@ import dagger.android.HasActivityInjector;
 
 public class WeatherApp extends Application implements HasActivityInjector {
 
+    private AppComponent appComponent;
+
     @Inject
     DispatchingAndroidInjector<Activity> activityInjector;
 
@@ -27,5 +30,14 @@ public class WeatherApp extends Application implements HasActivityInjector {
     @Override
     public AndroidInjector<Activity> activityInjector() {
         return activityInjector;
+    }
+
+
+    public AppComponent getComponent() {
+        return appComponent;
+    }
+
+    public static AppComponent getComponent(Context context) {
+        return ((WeatherApp) context.getApplicationContext()).getComponent();
     }
 }
