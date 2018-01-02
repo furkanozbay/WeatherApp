@@ -8,5 +8,5 @@ import com.furkanozbay.weatherapp.view.base.BaseView;
 
 public interface MainActivityView extends BaseView {
 
-    void setDegree(String degree);
+    void setDescription(String degree);
 }

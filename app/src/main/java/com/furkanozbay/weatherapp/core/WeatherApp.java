@@ -24,14 +24,15 @@ public class WeatherApp extends Application implements HasActivityInjector {
     @Override
     public void onCreate() {
         super.onCreate();
-        DaggerAppComponent.create().inject(this);
+        appComponent = DaggerAppComponent.builder()
+                .appModule(new AppModule(this))
+                .build();
     }
 
     @Override
     public AndroidInjector<Activity> activityInjector() {
         return activityInjector;
     }
-
 
     public AppComponent getComponent() {
         return appComponent;

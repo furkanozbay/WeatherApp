@@ -1,15 +1,12 @@
 package com.furkanozbay.weatherapp.core;
 
-import javax.inject.Singleton;
-
 import dagger.Component;
 
 /**
  * Created by Furkan on 23.12.2017.
  */
 
-@Singleton
+@ApplicationScope
 @Component(modules = AppModule.class)
 public interface AppComponent {
-    void inject(WeatherApp weatherApp);
 }

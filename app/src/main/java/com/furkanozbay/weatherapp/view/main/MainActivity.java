@@ -1,5 +1,8 @@
 package com.furkanozbay.weatherapp.view.main;
 
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.furkanozbay.weatherapp.R;
@@ -15,11 +18,17 @@ import butterknife.BindView;
 
 public class MainActivity extends BaseActivity implements MainActivityView {
 
+    @BindView(R.id.layout_content)
+    LinearLayout layoutContent;
+
     @BindView(R.id.text_degree)
     TextView textDegree;
 
+    @BindView(R.id.progressbar_loading)
+    ProgressBar progressBarLoading;
+
     @Inject
-    MainActivityPresenterImpl presenter;
+    MainActivityPresenter presenter;
 
     @Override
     protected void initDagger() {
@@ -51,7 +60,9 @@ public class MainActivity extends BaseActivity implements MainActivityView {
     }
 
     @Override
-    public void setDegree(String degree) {
+    public void setDescription(String degree) {
         textDegree.setText(degree);
+        progressBarLoading.setVisibility(View.GONE);
+        layoutContent.setVisibility(View.VISIBLE);
     }
 }

@@ -6,6 +6,8 @@ import com.furkanozbay.weatherapp.network.WeatherService;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observable;
 
 /**
@@ -13,6 +15,10 @@ import io.reactivex.Observable;
  */
 
 public class MainActivityInteractorImpl implements MainActivityInteractor {
+
+    @Inject
+    public MainActivityInteractorImpl() {
+    }
 
     @Override
     public Observable<List<Weather>> getWeather(String cityId) {

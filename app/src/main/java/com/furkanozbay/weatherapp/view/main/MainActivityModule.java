@@ -9,13 +9,13 @@ import dagger.Provides;
  * Created by Furkan on 24.12.2017.
  */
 
-@Module
 @PerActivity
+@Module
 public class MainActivityModule {
 
     @Provides
-    MainActivityPresenterImpl provideMainActivityPresenter() {
-        return new MainActivityPresenterImpl();
+    MainActivityPresenter provideMainActivityPresenter(MainActivityInteractorImpl mainActivityInteractor) {
+        return new MainActivityPresenterImpl(mainActivityInteractor);
     }
 
     @Provides

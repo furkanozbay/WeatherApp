@@ -21,9 +21,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        initDagger();
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+        initDagger();
         attachView();
         view = getView();
         presenter = getPresenter();
