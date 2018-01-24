@@ -34,7 +34,6 @@ public class MainActivity extends BaseActivity implements MainActivityView {
     protected void initDagger() {
         DaggerMainActivityComponent.builder()
                 .appComponent(WeatherApp.getComponent(this))
-                .mainActivityModule(new MainActivityModule())
                 .build()
                 .inject(this);
     }
